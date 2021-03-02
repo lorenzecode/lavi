@@ -1,0 +1,8 @@
+@import 'abstract/fluid';
+@import 'abstract/unit';
+@import 'components/menu/menu';
+
+.teste-red {
+  color: red;
+  @apply bg-blue-300;
+}
