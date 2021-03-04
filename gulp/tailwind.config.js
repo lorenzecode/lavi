@@ -2,6 +2,9 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   darkMode: false,
+  // corePlugins: {
+  //   container: false,
+  // },
   theme: {
     screens: {
       sm: '640px',
@@ -13,10 +16,23 @@ module.exports = {
     container: {
       center: true,
     },
+    fontFamily: {
+      quick: ['Quicksand', 'sans-serif'],
+    },
     extend: {
       colors: {
-        'light-blue': colors.lightBlue,
-        cyan: colors.cyan,
+        'rose-gold': {
+          50: '#fbf8f8',
+          100: '#f8f1f2',
+          200: '#eddbde',
+          300: '#e2c5c9',
+          400: '#cd9aa1',
+          500: '#b76e79',
+          600: '#a5636d',
+          700: '#89535b',
+          800: '#6e4249',
+          900: '#5a363b',
+        },
       },
       gridColumnStart: {
         14: '14',
