@@ -67,35 +67,37 @@ const errorHandler = (r) => {
 // Html
 export const html = () => {
   panini.refresh();
-  return src(['../src/pages/*.html'])
-    .pipe(plumber(errorHandler))
-    .pipe(
-      panini({
-        root: '../src/pages/',
-        layouts: '../src/pages/layouts/',
-        partials: '../src/pages/partials/',
-        helpers: '../src/pages/helpers/',
-        data: '../src/pages/data/',
-      })
-    )
-    .pipe(fileInclude({ prefix: '@@' }))
-    .pipe(
-      gulpif(
-        PRODUCTION,
-        urlPrefixer.html({
-          prefix: 'http://localhost:3000/',
+  return (
+    src(['../src/pages/*.html'])
+      .pipe(plumber(errorHandler))
+      .pipe(
+        panini({
+          root: '../src/pages/',
+          layouts: '../src/pages/layouts/',
+          partials: '../src/pages/partials/',
+          helpers: '../src/pages/helpers/',
+          data: '../src/pages/data/',
         })
       )
-    )
-    .pipe(gulpif(PRODUCTION, htmlmin({ collapseWhitespace: true })))
-    .pipe(dest('../src'))
-    .pipe(SERVER.stream())
-    .pipe(
-      notify({
-        message: '\n\n✅  ===> HTML — completed!\n',
-        onLast: true,
-      })
-    );
+      .pipe(fileInclude({ prefix: '@@' }))
+      // .pipe(
+      //   gulpif(
+      //     PRODUCTION,
+      //     urlPrefixer.html({
+      //       prefix: 'http://localhost:3000/',
+      //     })
+      //   )
+      // )
+      .pipe(gulpif(PRODUCTION, htmlmin({ collapseWhitespace: true })))
+      .pipe(dest('../src'))
+      .pipe(SERVER.stream())
+      .pipe(
+        notify({
+          message: '\n\n✅  ===> HTML — completed!\n',
+          onLast: true,
+        })
+      )
+  );
 };
 
 // Styles
@@ -117,42 +119,45 @@ export const core = () => {
 };
 
 export const styles = () => {
-  return src(
-    !PRODUCTION
-      ? '../src/assets/sass/style.scss'
-      : ['../src/assets/sass/core.scss', '../src/assets/sass/style.scss']
-  )
-    .pipe(plumber(errorHandler))
-    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(FRAMEWORK, PRODUCTION ? [autoprefixer] : []))
-    .pipe(mergeMQ({ log: true }))
-    .pipe(
-      gulpif(
-        PRODUCTION,
-        purgecss({
-          content: ['../src/**/*.{html,js}'],
-          defaultExtractor: (content) => {
-            const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
-            const innerMatches =
-              content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
-            return broadMatches.concat(innerMatches);
-          },
+  return (
+    src(
+      !PRODUCTION
+        ? '../src/assets/sass/style.scss'
+        : ['../src/assets/sass/core.scss', '../src/assets/sass/style.scss']
+    )
+      .pipe(plumber(errorHandler))
+      .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+      .pipe(sass().on('error', sass.logError))
+      .pipe(postcss(FRAMEWORK, PRODUCTION ? [autoprefixer] : []))
+      .pipe(mergeMQ({ log: true }))
+      .pipe(
+        gulpif(
+          PRODUCTION,
+          purgecss({
+            content: ['../src/**/*.{html,js}'],
+            defaultExtractor: (content) => {
+              const broadMatches =
+                content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+              const innerMatches =
+                content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
+              return broadMatches.concat(innerMatches);
+            },
+          })
+        )
+      )
+      .pipe(cssMin())
+      // .pipe(gulpif(!PRODUCTION, beautify()))
+      .pipe(beautify())
+      .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+      .pipe(dest('../src/assets/css'))
+      .pipe(SERVER.stream())
+      .pipe(
+        notify({
+          message: '\n\n✅  ===> STYLES — completed!\n',
+          onLast: true,
         })
       )
-    )
-    .pipe(cssMin())
-    // .pipe(gulpif(!PRODUCTION, beautify()))
-    .pipe(beautify())
-    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(dest('../src/assets/css'))
-    .pipe(SERVER.stream())
-    .pipe(
-      notify({
-        message: '\n\n✅  ===> STYLES — completed!\n',
-        onLast: true,
-      })
-    );
+  );
 };
 
 // Scripts

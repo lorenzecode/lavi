@@ -43,6 +43,9 @@ module.exports = {
         'max-12':
           'calc(50% - calc(theme("screens.2xl") / 2)) repeat(12, minmax(0, 1fr)) calc(50% - calc(theme("screens.2xl") / 2));',
       },
+      maxWidth: {
+        '2/10': '80%',
+      },
     },
   },
   variants: {
