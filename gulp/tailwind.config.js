@@ -40,8 +40,10 @@ module.exports = {
       },
       gridTemplateColumns: {
         14: 'repeat(14, minmax(0, 1fr))',
-        'max-12':
+        'max-2xl-12':
           'calc(50% - calc(theme("screens.2xl") / 2)) repeat(12, minmax(0, 1fr)) calc(50% - calc(theme("screens.2xl") / 2));',
+        'max-xl-12':
+          'calc(50% - calc(theme("screens.xl") / 2)) repeat(12, minmax(0, 1fr)) calc(50% - calc(theme("screens.xl") / 2));',
       },
       maxWidth: {
         '2/10': '80%',
@@ -51,6 +53,7 @@ module.exports = {
   variants: {
     extend: {
       ringColor: ['hover'],
+      borderWidth: ['hover'],
     },
   },
   plugins: [],

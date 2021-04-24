@@ -18,6 +18,15 @@ body {
   overflow: hidden;
   position: relative;
 }
+.l-embla-viewport {
+  &.is-draggable {
+    cursor: move;
+    cursor: grab;
+  }
+  &.is-dragging {
+    cursor: grabbing;
+  }
+}
 .l-embla-wrapper {
   display: flex;
   align-items: center;
@@ -34,6 +43,14 @@ body {
 }
 
 #l-menu {
+  .l-embla-wrapper {
+    display: flex;
+    align-items: center;
+    @media (min-width: 768px) {
+      justify-content: center;
+      transform: initial !important;
+    }
+  }
   a.active {
     border-bottom: 1px solid;
   }
@@ -75,24 +92,25 @@ body {
 .l-embla-btn {
   outline: 0;
   cursor: pointer;
-  background-color: transparent;
   touch-action: manipulation;
   position: absolute;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
   border: 0;
-  width: 30px;
-  height: 30px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   justify-content: center;
   align-items: center;
-  fill: #b76e79;
-  padding: 0;
+  fill: #fbf8f8;
+  padding: 10px;
+  @apply ring-1 ring-rose-gold-500 border-2 border-solid rounded-full border-rose-gold-50 bg-rose-gold-500 hover:bg-rose-gold-600 transition;
 }
 
 .l-embla-btn:disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .l-embla-btn-svg {
@@ -128,10 +146,15 @@ body {
   margin-left: 7.5px;
   display: flex;
   align-items: center;
+
+  &:hover:after {
+    background-color: #b76e79;
+  }
 }
 
 .l-embla-dot:after {
-  background-color: #f8f1f2;
+  @apply transition;
+  background-color: #eddbde;
   width: 100%;
   height: 4px;
   border-radius: 4px;
@@ -143,6 +166,96 @@ body {
   opacity: 1;
 }
 
+// Equilibrium
+
+.equilibrium {
+  &::before {
+    content: '';
+    @apply w-40 h-40 transform -translate-x-1/2 -translate-y-1/2 absolute border border-solid rounded-full border-rose-gold-200 top-1/2 left-1/2 z-10 bg-white;
+
+    @media (min-width: 640px) {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    @apply w-px h-full absolute bg-rose-gold-200 z-0;
+
+    @media (min-width: 640px) {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  svg {
+    @media (min-width: 640px) {
+      position: initial;
+    }
+  }
+}
+
+// Services
+
+#l-services {
+  width: 100%;
+
+  .l-embla-viewport {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 16px;
+  }
+  .l-embla-wrapper {
+    margin-left: -16px;
+  }
+  .l-embla-content {
+    padding-left: 16px;
+    flex: 0 0 auto;
+    width: 90%;
+    max-width: 360px;
+    height: clamp(340px, calc(600 / 1536 * 100vw), 480px);
+    transition: max-width 0.2s;
+
+    @media (min-width: 1024px) {
+      max-width: 400px;
+    }
+    // height: 480px;
+    // position: relative;
+    // overflow: hidden;
+
+    // @media (min-width: 640px) {
+    //   height: clamp(380px, calc(600 / 1536 * 100vw), 60vh);
+    // }
+    // @media (min-width: 768px) {
+    //   height: clamp(460px, calc(600 / 1536 * 100vw), 60vh);
+    // }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#main-carousel {
+  .l-embla-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  .l-embla-wrapper {
+    display: flex;
+    margin-left: -8px;
+  }
+  .l-embla-content {
+    padding-left: 8px;
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(340px, calc(600 / 1536 * 100vw), 600px);
+  }
+}
 // .embla {
 //   position: relative;
 //   background-color: #f7f7f7;
@@ -176,9 +289,9 @@ body {
 // }
 
 // .embla__slide {
-//   position: relative;
-//   min-width: 80%;
 //   padding-left: 10px;
+//   min-width: 100%;
+//   position: relative;
 // }
 
 // .embla__slide__inner {
@@ -199,102 +312,90 @@ body {
 //   transform: translate(-50%, -50%);
 // }
 
-// .embla__button {
-//   outline: 0;
-//   cursor: pointer;
-//   background-color: transparent;
-//   touch-action: manipulation;
-//   position: absolute;
-//   z-index: 1;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   border: 0;
-//   width: 30px;
-//   height: 30px;
-//   justify-content: center;
-//   align-items: center;
-//   fill: #1bcacd;
-//   padding: 0;
+// .embla--thumb {
+//   padding-top: 0;
+//   margin-top: -12px;
 // }
 
-// .embla__button:disabled {
-//   cursor: default;
-//   opacity: 0.3;
-// }
+#thumb-carousel {
+  // .l-embla-viewport {
+  //   overflow: hidden;
+  //   width: 100%;
+  // }
+  .l-embla-wrapper {
+    cursor: default;
+    padding-top: 8px;
+    margin-left: -8px;
+  }
+  .l-embla-content {
+    padding-left: 8px;
+    min-width: 25%;
+    // height: clamp(70px, calc(150 / 1536 * 100vw), 150px);
+    @media (min-width: 480px) {
+      min-width: 20%;
+    }
 
-// .embla__button__svg {
-//   width: 100%;
-//   height: 100%;
-// }
+    img {
+      opacity: 0.4;
+      transition: opacity 0.2s;
 
-// .embla__button--prev {
-//   left: 27px;
-// }
-
-// .embla__button--next {
-//   right: 27px;
-// }
-
-// .embla__dots {
-//   display: flex;
-//   list-style: none;
-//   justify-content: center;
-//   padding-top: 10px;
-// }
-
-// .embla__dot {
-//   background-color: transparent;
-//   cursor: pointer;
-//   position: relative;
-//   padding: 0;
-//   outline: 0;
-//   border: 0;
-//   width: 30px;
-//   height: 30px;
-//   margin-right: 7.5px;
-//   margin-left: 7.5px;
-//   display: flex;
-//   align-items: center;
-// }
-
-// .embla__dot:after {
-//   background-color: #efefef;
-//   width: 100%;
-//   height: 4px;
-//   border-radius: 2px;
-//   content: '';
-// }
-
-// .embla__dot.is-selected:after {
-//   background-color: #1bcacd;
-//   opacity: 1;
-// }
-
-.equilibrium {
-  &::before {
-    content: '';
-    @apply w-40 h-40 transform -translate-x-1/2 -translate-y-1/2 absolute border border-solid rounded-full border-rose-gold-200 top-1/2 left-1/2 z-10 bg-white;
-
-    @media (min-width: 640px) {
-      &::before {
-        content: none;
+      @media (min-width: 1024px) {
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
-  &::after {
-    content: '';
-    @apply w-px h-full absolute bg-rose-gold-200 z-0;
-
-    @media (min-width: 640px) {
-      &::after {
-        content: none;
-      }
-    }
-  }
-
-  svg {
-    @media (min-width: 640px) {
-      position: initial;
+  .is-selected {
+    img {
+      opacity: 1;
     }
   }
 }
+// .embla__slide--thumb.is-selected .embla__slide__thumbnail {
+//   opacity: 1;
+// }
+
+// .embla__container--thumb {
+//   cursor: default;
+//   margin-left: -8px;
+// }
+
+// .embla__slide--thumb {
+//   padding-left: 8px;
+//   min-width: 20%;
+// }
+
+// .embla__slide__inner--thumb {
+//   touch-action: manipulation;
+//   cursor: pointer;
+//   border: 0;
+//   outline: 0;
+//   margin: 0;
+//   padding: 0;
+//   height: 100px;
+//   width: 100%;
+//   background-color: transparent;
+//   position: relative;
+//   display: block;
+//   overflow: hidden;
+// }
+
+// .embla__slide__thumbnail {
+//   position: absolute;
+//   opacity: 0.2;
+//   top: 0;
+//   bottom: 0;
+//   left: -10000%;
+//   right: -10000%;
+//   margin: auto;
+//   min-width: 1000%;
+//   min-height: 1000%;
+//   max-width: none;
+//   transform: scale(0.1);
+//   transition: opacity 0.2s;
+// }
+
+// .embla__slide--thumb.is-selected .embla__slide__thumbnail {
+//   opacity: 1;
+// }
