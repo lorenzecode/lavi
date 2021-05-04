@@ -161,8 +161,9 @@ export const styles = () => {
 };
 
 // Scripts
-export const scripts = () => {
-  return src(['../src/assets/js/**/*.js', '!../src/assets/js/*.min.js'])
+export const scriptsHome = () => {
+  // return src(['../src/assets/js/**/*.js', '!../src/assets/js/*.min.js'])
+   return src('../src/assets/js/home/*.js')
     .pipe(plumber(errorHandler))
     .pipe(
       webpack({
@@ -182,7 +183,40 @@ export const scripts = () => {
         devtool: !PRODUCTION ? 'inline-source-map' : false,
       })
     )
-    .pipe(rename('script.min.js'))
+    .pipe(rename('home.min.js'))
+    .pipe(dest('../src/assets/js'))
+    .pipe(SERVER.stream())
+    .pipe(
+      notify({
+        message: '\n\n✅  ===> JS — completed!\n',
+        onLast: true,
+      })
+    );
+};
+
+export const scriptsEspaco = () => {
+  // return src(['../src/assets/js/**/*.js', '!../src/assets/js/*.min.js'])
+   return src('../src/assets/js/espaco/*.js')
+    .pipe(plumber(errorHandler))
+    .pipe(
+      webpack({
+        module: {
+          rules: [
+            {
+              test: /\.(js)$/,
+              exclude: /(node_modules)/,
+              loader: 'babel-loader',
+              query: {
+                presets: ['@babel/preset-env'],
+              },
+            },
+          ],
+        },
+        mode: PRODUCTION ? 'production' : 'development',
+        devtool: !PRODUCTION ? 'inline-source-map' : false,
+      })
+    )
+    .pipe(rename('espaco.min.js'))
     .pipe(dest('../src/assets/js'))
     .pipe(SERVER.stream())
     .pipe(
@@ -230,7 +264,7 @@ export const watchForChanges = () => {
   );
   watch(
     ['../src/assets/js/**/*.js', '!../src/assets/js/**/*.min.js'],
-    series(scripts)
+    series([scriptsHome, scriptsEspaco])
   );
 };
 
@@ -238,17 +272,19 @@ export const watchForChanges = () => {
 export const start = series(
   core,
   styles,
-  scripts,
+  scriptsHome,
+  scriptsEspaco,
   html,
   livePreviewSync,
   watchForChanges
 );
 export const dev = series(
   styles,
-  scripts,
+  scriptsHome,
+  scriptsEspaco,
   html,
   livePreviewSync,
   watchForChanges
 );
-export const build = series(clean, core, styles, scripts, html, copy, images);
+export const build = series(clean, core, styles, scriptsHome, scriptsEspaco, html, copy, images);
 export default dev;

@@ -1,4 +1,4 @@
-import EmblaCarousel from '../../../gulp/node_modules/embla-carousel';
+import EmblaCarousel from '../../../../gulp/node_modules/embla-carousel';
 
 const wrapMenu = document.querySelector('#l-menu');
 const viewPortMenu = wrapMenu.querySelector('.l-embla-viewport');
