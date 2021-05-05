@@ -1,2 +1,2 @@
-import menu from '../home/_0-menu'
-import thumb from '../home/_3-thumb'
+import menu from '../lib/_0-menu'
+import thumb from '../lib/_3-thumb'
