@@ -40,7 +40,8 @@
     "npm": "^7.6.0",
     "panini": "^1.7.1",
     "postcss": "^8.1.14",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^2.1.2",
+    "vinyl-named": "^1.1.0",
     "webpack-stream": "^6.1.2",
     "yargs": "^16.2.0"
   },
