@@ -130,6 +130,7 @@ select {
     color: inherit
 }
 
+iframe,
 img,
 object,
 svg {
@@ -228,6 +229,10 @@ svg {
 
 .border-2 {
     border-width: 2px
+}
+
+.border {
+    border-width: 1px
 }
 
 .border-t-2 {
@@ -441,6 +446,10 @@ svg {
 
 .pt-4 {
     padding-top: 1rem
+}
+
+.pb-4 {
+    padding-bottom: 1rem
 }
 
 .pl-4 {
