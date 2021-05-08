@@ -10,7 +10,7 @@
 // };
 // const emblaServices = EmblaCarousel(viewPortServices, optionsServices);
 
-import EmblaCarousel from '../../../gulp/node_modules/embla-carousel';
+import EmblaCarousel from '../../../../gulp/node_modules/embla-carousel';
 
 // Nav
 const setupPrevNextBtnsServices = (

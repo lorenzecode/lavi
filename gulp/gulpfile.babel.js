@@ -13,6 +13,7 @@ import gulpif from 'gulp-if';
 
 import del from 'del';
 import rename from 'gulp-rename';
+import named from 'vinyl-named';
 
 import sass from 'gulp-sass';
 import cssMin from 'gulp-csso';
@@ -101,96 +102,140 @@ export const html = () => {
 };
 
 // Styles
-export const core = () => {
-  return src(['../src/assets/sass/core.scss'])
+export const styles = () => {
+  return src('../src/assets/sass/*.scss')
     .pipe(plumber(errorHandler))
+    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(FRAMEWORK))
+    .pipe(dest('../src/assets/sass/generator'))
+    .pipe(postcss(FRAMEWORK, PRODUCTION ? [autoprefixer] : []))
+    .pipe(mergeMQ({ log: true }))
+    .pipe(
+      gulpif(
+        PRODUCTION,
+        purgecss({
+          content: ['../src/**/*.{html,js}'],
+          defaultExtractor: (content) => {
+            const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+            const innerMatches =
+              content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
+            return broadMatches.concat(innerMatches);
+          },
+        })
+      )
+    )
     .pipe(cssMin())
-    .pipe(beautify())
+    .pipe(gulpif(!PRODUCTION, beautify()))
+    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest('../src/assets/css'))
     .pipe(SERVER.stream())
     .pipe(
       notify({
-        message: '\n\n✅  ===> CORE — completed!\n',
+        message: '\n\n✅  ===> STYLES — completed!\n',
         onLast: true,
       })
     );
 };
 
-export const styles = () => {
+// export const core = () => {
+//   return src(['../src/assets/sass/core.scss'])
+//     .pipe(plumber(errorHandler))
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(dest('../src/assets/sass/generator'))
+//     .pipe(postcss(FRAMEWORK))
+//     .pipe(cssMin())
+//     .pipe(beautify())
+//     .pipe(dest('../src/assets/css'))
+//     .pipe(SERVER.stream())
+//     .pipe(
+//       notify({
+//         message: '\n\n✅  ===> CORE — completed!\n',
+//         onLast: true,
+//       })
+//     );
+// };
+
+// export const styles = () => {
+//   return (
+//     src(
+//       !PRODUCTION
+//         ? '../src/assets/sass/style.scss'
+//         : ['../src/assets/sass/core.scss', '../src/assets/sass/style.scss']
+//     )
+//       // src(['../src/assets/sass/core.scss', '../src/assets/sass/style.scss'])
+//       .pipe(plumber(errorHandler))
+//       .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+//       .pipe(sass().on('error', sass.logError))
+//       .pipe(postcss(FRAMEWORK, PRODUCTION ? [autoprefixer] : []))
+//       .pipe(mergeMQ({ log: true }))
+//       .pipe(
+//         gulpif(
+//           PRODUCTION,
+//           purgecss({
+//             content: ['../src/**/*.{html,js}'],
+//             defaultExtractor: (content) => {
+//               const broadMatches =
+//                 content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+//               const innerMatches =
+//                 content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
+//               return broadMatches.concat(innerMatches);
+//             },
+//           })
+//         )
+//       )
+//       .pipe(cssMin())
+//       // .pipe(gulpif(!PRODUCTION, beautify()))
+//       .pipe(beautify())
+//       .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+//       .pipe(dest('../src/assets/css'))
+//       .pipe(SERVER.stream())
+//       .pipe(
+//         notify({
+//           message: '\n\n✅  ===> STYLES — completed!\n',
+//           onLast: true,
+//         })
+//       )
+//   );
+// };
+
+// Scripts
+export const scripts = () => {
   return (
-    src(
-      !PRODUCTION
-        ? '../src/assets/sass/style.scss'
-        : ['../src/assets/sass/core.scss', '../src/assets/sass/style.scss']
-    )
+    // src(['../src/assets/js/**/*.js', '!../src/assets/js/*.min.js'])
+    src('../src/assets/js/pages/*.js')
       .pipe(plumber(errorHandler))
-      .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-      .pipe(sass().on('error', sass.logError))
-      .pipe(postcss(FRAMEWORK, PRODUCTION ? [autoprefixer] : []))
-      .pipe(mergeMQ({ log: true }))
+      .pipe(named())
       .pipe(
-        gulpif(
-          PRODUCTION,
-          purgecss({
-            content: ['../src/**/*.{html,js}'],
-            defaultExtractor: (content) => {
-              const broadMatches =
-                content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
-              const innerMatches =
-                content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
-              return broadMatches.concat(innerMatches);
-            },
-          })
-        )
+        webpack({
+          module: {
+            rules: [
+              {
+                test: /\.(js)$/,
+                exclude: /(node_modules)/,
+                loader: 'babel-loader',
+                query: {
+                  presets: ['@babel/preset-env'],
+                },
+              },
+            ],
+          },
+          mode: PRODUCTION ? 'production' : 'development',
+          devtool: !PRODUCTION ? 'inline-source-map' : false,
+          output: {
+            filename: '[name].js',
+          },
+        })
       )
-      .pipe(cssMin())
-      // .pipe(gulpif(!PRODUCTION, beautify()))
-      .pipe(beautify())
-      .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-      .pipe(dest('../src/assets/css'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(dest('../src/assets/js'))
       .pipe(SERVER.stream())
       .pipe(
         notify({
-          message: '\n\n✅  ===> STYLES — completed!\n',
+          message: '\n\n✅  ===> JS — completed!\n',
           onLast: true,
         })
       )
   );
-};
-
-// Scripts
-export const scripts = () => {
-  return src(['../src/assets/js/**/*.js', '!../src/assets/js/*.min.js'])
-    .pipe(plumber(errorHandler))
-    .pipe(
-      webpack({
-        module: {
-          rules: [
-            {
-              test: /\.(js)$/,
-              exclude: /(node_modules)/,
-              loader: 'babel-loader',
-              query: {
-                presets: ['@babel/preset-env'],
-              },
-            },
-          ],
-        },
-        mode: PRODUCTION ? 'production' : 'development',
-        devtool: !PRODUCTION ? 'inline-source-map' : false,
-      })
-    )
-    .pipe(rename('script.min.js'))
-    .pipe(dest('../src/assets/js'))
-    .pipe(SERVER.stream())
-    .pipe(
-      notify({
-        message: '\n\n✅  ===> JS — completed!\n',
-        onLast: true,
-      })
-    );
 };
 
 // Images
@@ -212,7 +257,8 @@ export const copy = () => {
     '../src/**/*',
     '!../src/assets/{img,sass}',
     '!../src/assets/{img,sass}/**/*',
-    '!../src/assets/js/_*.js',
+    '!../src/assets/js/{functions,lib,pages}',
+    '!../src/assets/js/{functions,lib,pages}/**/*',
     '!../src/pages',
     '!../src/pages/**/*',
   ]).pipe(dest('../public'));
@@ -224,10 +270,7 @@ export const clean = () => del(['../public'], { force: true });
 // Watch
 export const watchForChanges = () => {
   watch('../src/pages/**/**/*', series(html));
-  watch(
-    ['../src/assets/sass/**/*.scss', '!../src/assets/sass/core.scss'],
-    series(styles)
-  );
+  watch(['../src/assets/sass/**/*.scss'], series(styles));
   watch(
     ['../src/assets/js/**/*.js', '!../src/assets/js/**/*.min.js'],
     series(scripts)
@@ -236,7 +279,6 @@ export const watchForChanges = () => {
 
 // Tasks
 export const start = series(
-  core,
   styles,
   scripts,
   html,
@@ -250,5 +292,5 @@ export const dev = series(
   livePreviewSync,
   watchForChanges
 );
-export const build = series(clean, core, styles, scripts, html, copy, images);
+export const build = series(clean, styles, scripts, html, copy, images);
 export default dev;

@@ -9,7 +9,7 @@ npm i -D webpack-stream @babel/register @babel/preset-env @babel/core babel-load
 
 # desenvolvimento, produção, renomear, deletar
 
-npm i -D yargs gulp-if gulp-rename del
+npm i -D yargs gulp-if gulp-rename vinyl-named del
 
 # Notificação
 

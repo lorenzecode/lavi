@@ -1,4 +1,4 @@
-import EmblaCarousel from '../../../gulp/node_modules/embla-carousel';
+import EmblaCarousel from '../../../../gulp/node_modules/embla-carousel';
 
 // Nav
 const setupPrevNextBtns = (prevBtn, nextBtn, emblaSlide) => {
