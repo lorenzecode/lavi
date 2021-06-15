@@ -1,12 +1,13 @@
-$colour: blue;
-
-// .teste-teste-teste {
-//   color: red;
-//   @apply
-//    pb-2
-//    border-b-2
-//    border-gray-400
-//    mb-5
-//    text-xl
-//    font-medium;
-// }
+#l-menu {
+  .l-embla-wrapper {
+    display: flex;
+    align-items: center;
+    @media (min-width: 768px) {
+      justify-content: center;
+      transform: initial !important;
+    }
+  }
+  a.active {
+    border-bottom: 1px solid;
+  }
+}
