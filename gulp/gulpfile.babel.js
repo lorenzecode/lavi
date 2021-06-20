@@ -269,7 +269,7 @@ export const clean = () => del(['../public'], { force: true });
 
 // Watch
 export const watchForChanges = () => {
-  watch('../src/pages/**/**/*', series(html));
+  watch('../src/pages/**/**/*', series(html, styles));
   watch(['../src/assets/sass/**/*.scss'], series(styles));
   watch(
     ['../src/assets/js/**/*.js', '!../src/assets/js/**/*.min.js'],

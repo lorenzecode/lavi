@@ -17,25 +17,23 @@ description: Contato description
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
         tenetur. Consectetur dolores eum inventore exercitationem vitae est
         dolore debitis eos.
-        <br /><br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio,
-        ratione ipsum aspernatur tenetur ipsam in. Delectus porro sit architecto
-        iure eligendi voluptatum quia, minus perferendis nostrum magni,
-        explicabo animi vitae suscipit, accusamus vel facilis! Quos, sequi. Quos
-        ex inventore illum omnis iure, sed unde recusandae iste ipsam suscipit
-        fugiat.
-        <br /><br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-        tenetur. Consectetur dolores eum inventore exercitationem vitae est
-        dolore debitis eos.
-        <br /><br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio,
-        ratione ipsum aspernatur tenetur ipsam in. Delectus porro sit architecto
-        iure eligendi voluptatum quia, minus perferendis nostrum magni,
-        explicabo animi vitae suscipit, accusamus vel facilis! Quos, sequi. Quos
-        ex inventore illum omnis iure, sed unde recusandae iste ipsam suscipit
-        fugiat.
       </p>
+      <form class="table max-w-2xl m-auto mt-8" action="https://formsubmit.co/027d60b09146222a793c01c8d64b0820" method="POST">
+        <input type="hidden" name="_next" value="http://localhost:3000/obrigado.html">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Contato - Laví Terapias Complementares">
+        <label for="name" class="relative float-left px-[6px] ml-2 -mb-3 font-bold bg-white text-rose-gold-800">Nome:</label>
+        <input type="text" id="name" name="name" class="w-full p-3 font-semibold border h-14 rounded-xl border-rose-gold-800">
+        <label for="email" class="relative float-left px-[6px] mt-4 ml-2 -mb-3 font-bold bg-white text-rose-gold-800">E-Mail:</label>
+        <input type="email" id="email" name="email" class="w-full p-3 font-semibold border h-14 rounded-xl border-rose-gold-800">
+        <label for="phone" class="relative float-left px-[6px] mt-4 ml-2 -mb-3 font-bold bg-white text-rose-gold-800">Celular:</label>
+        <input type="phone" id="phone" name="phone" class="w-full p-3 font-semibold border h-14 rounded-xl border-rose-gold-800">
+        <label for="message" class="relative float-left px-[6px] mt-4 ml-2 -mb-3 font-bold bg-white text-rose-gold-800">Mensagem:</label>
+        <textarea name="message" id="message" class="w-full p-3 font-semibold border rounded-xl h-52 border-rose-gold-800"></textarea>
+        <button type="submit" class="inline-flex justify-center float-right px-4 py-2 mt-4 text-center transition border-2 border-solid rounded-full border-rose-gold-50 ring-1 ring-rose-gold-500 text-rose-gold-50 bg-rose-gold-500 hover:bg-rose-gold-600">Enviar contato</button>
+      </form>
     </div>
   </div>
 </section>
