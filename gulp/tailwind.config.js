@@ -35,6 +35,10 @@ module.exports = {
           800: '#6e4249',
           900: '#5a363b',
         },
+        whatsapp: {
+          500: '#00e676',
+          600: '#00cf6a',
+        },
       },
       gridColumnStart: {
         14: '14',

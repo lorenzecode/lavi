@@ -105,7 +105,8 @@ body {
       transform: initial !important; } }
 
 #l-menu a.active {
-  border-bottom: 1px solid; }
+  border: 1px solid;
+  @apply bg-rose-gold-100 border-rose-gold-100 shadow-sm; }
 
 #l-slide {
   width: 100%; }

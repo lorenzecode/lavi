@@ -12,3 +12,8 @@ emblaMenu.on('resize', () => {
   const draggable = window.innerWidth < BREAKPOINT;
   emblaMenu.reInit({ draggable });
 });
+
+// Active menu
+const menuLink = document.getElementsByClassName('link-menu');
+for (let n = 0; n < menuLink.length; n++)
+  menuLink[n].href === location.href && menuLink[n].classList.add('active');
