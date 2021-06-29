@@ -9,12 +9,6 @@ body {
 .logo {
   max-width: 220px; }
 
-.grow img {
-  transition: all 0.2s ease-in-out; }
-
-.grow:hover img {
-  transform: scale(1.1); }
-
 .l-embla {
   overflow: hidden;
   position: relative; }
@@ -208,5 +202,26 @@ body {
 #thumb-carousel .is-selected img {
   opacity: 1; }
 
+@media (min-width: 1024px) {
+  .oddeven:nth-child(even) .oddeven-child {
+    flex-direction: row-reverse; } }
+
 .text-fluid-2xl {
   font-size: clamp(2rem, calc(60 / 1536 * 100vw), 3.75rem); }
+
+.grow img {
+  transition: all 0.2s ease-in-out; }
+
+.grow:hover img {
+  transform: scale(1.1); }
+
+.ellipsis {
+  display: block;
+  display: -webkit-box;
+  height: 3em;
+  line-height: 1.5em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*word-break: break-all;*/ }

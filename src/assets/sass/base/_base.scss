@@ -9,9 +9,3 @@ body {
 .logo {
   max-width: 220px;
 }
-.grow img {
-  transition: all 0.2s ease-in-out;
-}
-.grow:hover img {
-  transform: scale(1.1);
-}

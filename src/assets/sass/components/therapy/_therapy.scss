@@ -1,0 +1,5 @@
+@media (min-width: 1024px) {
+    .oddeven:nth-child(even) .oddeven-child {
+        flex-direction: row-reverse;
+    }
+}

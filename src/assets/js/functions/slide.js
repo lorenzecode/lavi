@@ -1,5 +1,31 @@
 import EmblaCarousel from '../../../../gulp/node_modules/embla-carousel';
 
+// Autoplay
+const autoplay = (embla, interval) => {
+  let timer = 0;
+
+  const play = () => {
+    stop();
+    requestAnimationFrame(() => (timer = window.setTimeout(next, interval)));
+  };
+
+  const stop = () => {
+    window.clearTimeout(timer);
+    timer = 0;
+  };
+
+  const next = () => {
+    if (embla.canScrollNext()) {
+      embla.scrollNext();
+    } else {
+      embla.scrollTo(0);
+    }
+    play();
+  };
+
+  return { play, stop };
+};
+
 // Nav
 const setupPrevNextBtns = (prevBtn, nextBtn, emblaSlide) => {
   prevBtn.addEventListener('click', emblaSlide.scrollPrev, false);
@@ -49,9 +75,9 @@ const optionsSlide = {
   loop: true,
 };
 const emblaSlide = EmblaCarousel(viewPortSlide, optionsSlide);
-
-const dotsArray = generateDotBtns(dots, emblaSlide);
-const setSelectedDotBtn = selectDotBtn(dotsArray, emblaSlide);
+const autoplayer = autoplay(emblaSlide, 4000);
+const dotsArray = generateDotBtns(dots, emblaSlide, autoplayer);
+const setSelectedDotBtn = selectDotBtn(dotsArray, emblaSlide, autoplayer);
 const disablePrevAndNextBtns = disablePrevNextBtns(
   prevBtn,
   nextBtn,
@@ -63,3 +89,6 @@ emblaSlide.on('select', setSelectedDotBtn);
 emblaSlide.on('select', disablePrevAndNextBtns);
 emblaSlide.on('init', setSelectedDotBtn);
 emblaSlide.on('init', disablePrevAndNextBtns);
+
+emblaSlide.on("pointerDown", autoplayer.stop);
+emblaSlide.on("init", autoplayer.play);
