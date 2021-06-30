@@ -24,8 +24,8 @@ script: ./assets/js/all.min.js
     </div>
 
     <div class="flex flex-col md:flex-row lg:flex-col max-w-5xl m-auto justify-center">
-      {{#repeat 3}}
-        <div
+      {{#each terapias}}
+        <div name="{{id}}"
           class="p-2 mt-6 mx-2 overflow-hidden shadow-md md:w-1/2 lg:w-full rounded-xl bg-rose-gold-100 oddeven"
         >
           <div class="flex flex-col lg:flex-row oddeven-child">
@@ -38,16 +38,10 @@ script: ./assets/js/all.min.js
             </div>
             <div class="lg:w-1/2 p-2 self-center">
               <h2 class="mb-2 text-2xl font-bold text-rose-gold-900">
-                Lorem ipsum
+                {{name}}
               </h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-                natus, eos officia nemo alias dolor magni debitis in odio obcaecati
-                id ab nam quas enim sequi laboriosam exercitationem totam! Sint
-                aliquam expedita earum quas non praesentium voluptatem atque,
-                recusandae et, esse nam ab, iste assumenda repudiandae sunt eos
-                facere a. Porro, est hic, quam exercitationem suscipit cum provident
-                obcaecati sit fuga nostrum
+                {{description}}
               </p>
             </div>
           </div>

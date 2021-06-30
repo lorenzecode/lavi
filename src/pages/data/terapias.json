@@ -1,22 +1,37 @@
 [
     {
+        "id": "pedras-quentes",
+        "link": "./nossas-terapias/#pedras-quentes",
         "image": "./assets/img/lavi-terapias-complementares-pedras-quentes.jpg",
         "name": "Pedras quentes",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio,
-        ratione ipsum aspernatur tenetur ipsam in. Delectus porro sit architecto
-        iure eligendi voluptatum quia, minus perferendis nostrum magni,
-        explicabo animi vitae suscipit, accusamus vel facilis! Quos, sequi. Quos
-        ex inventore illum omnis iure, sed unde recusandae iste ipsam suscipit
-        fugiat."
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
     },
     {
+        "id": "massagem-relaxante",
+        "link": "./nossas-terapias/#massagem-relaxante",
         "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
         "name": "Massagem relaxante",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio,
-        ratione ipsum aspernatur tenetur ipsam in. Delectus porro sit architecto
-        iure eligendi voluptatum quia, minus perferendis nostrum magni,
-        explicabo animi vitae suscipit, accusamus vel facilis! Quos, sequi. Quos
-        ex inventore illum omnis iure, sed unde recusandae iste ipsam suscipit
-        fugiat."
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t1",
+        "link": "./nossas-terapias/#t1",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t2",
+        "link": "./nossas-terapias/#t2",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t2",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t3",
+        "link": "./nossas-terapias/#t3",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t3",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
     }
 ]
