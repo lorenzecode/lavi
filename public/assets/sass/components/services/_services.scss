@@ -1,0 +1,29 @@
+#l-services {
+  width: 100%;
+
+  .l-embla-viewport {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 16px;
+  }
+  .l-embla-wrapper {
+    margin-left: -16px;
+  }
+  .l-embla-content {
+    padding-left: 16px;
+    flex: 0 0 auto;
+    width: 90%;
+    max-width: 360px;
+    height: clamp(340px, calc(600 / 1536 * 100vw), 480px);
+    transition: max-width 0.2s;
+
+    @media (min-width: 1024px) {
+      max-width: 400px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

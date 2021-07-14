@@ -1,0 +1,29 @@
+.equilibrium {
+  &::before {
+    content: '';
+    @apply w-40 h-40 transform -translate-x-1/2 -translate-y-1/2 absolute border border-solid rounded-full border-rose-gold-200 top-1/2 left-1/2 z-10 bg-white;
+
+    @media (min-width: 640px) {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    @apply w-px h-full absolute bg-rose-gold-200 z-0;
+
+    @media (min-width: 640px) {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  svg {
+    @media (min-width: 640px) {
+      position: initial;
+    }
+  }
+}

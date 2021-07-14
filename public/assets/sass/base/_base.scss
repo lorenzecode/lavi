@@ -1,0 +1,11 @@
+*,
+button {
+  outline: none !important;
+}
+body {
+  font-family: 'Quicksand', sans-serif;
+  @apply text-rose-gold-900;
+}
+.logo {
+  max-width: 220px;
+}
