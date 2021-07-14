@@ -1,16 +1,49 @@
 [
     {
         "id": "pedras-quentes",
+<<<<<<< HEAD
         "link": "./nossas-terapias.html#pedras-quentes",
         "image": "./assets/img/bg-espaco.jpg",
+=======
+        "link": "./nossas-terapias/#pedras-quentes",
+        "image": "./assets/img/lavi-terapias-complementares-pedras-quentes.jpg",
+>>>>>>> f4ed8c6d937bc080f68edc1c3c28c035fcc0d123
         "name": "Pedras quentes",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
     },
     {
+<<<<<<< HEAD
         "id": "pedras-quentes2",
         "link": "./nossas-terapias.html#pedras-quentes2",
         "image": "./assets/img/bg-espaco.jpg",
         "name": "Pedras quentes2",
+=======
+        "id": "massagem-relaxante",
+        "link": "./nossas-terapias/#massagem-relaxante",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "Massagem relaxante",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t1",
+        "link": "./nossas-terapias/#t1",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t2",
+        "link": "./nossas-terapias/#t2",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t2",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
+    },
+    {
+        "id": "t3",
+        "link": "./nossas-terapias/#t3",
+        "image": "./assets/img/lavi-terapias-complementares-massagem-relaxante.jpg",
+        "name": "t3",
+>>>>>>> f4ed8c6d937bc080f68edc1c3c28c035fcc0d123
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio"
     }
 ]
