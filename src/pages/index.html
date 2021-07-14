@@ -251,20 +251,20 @@ script: ./assets/js/home.min.js
       <div id="l-services" class="l-embla">
         <div class="l-embla-viewport">
           <div class="l-embla-wrapper">
-            @@for (let i = 0; i < 6; i++) {
-              <a href="./sobre.html" title="" class="l-embla-content grow">
+            {{#each terapias}}
+              <a href="{{link}}" title="" class="l-embla-content grow">
                 <div
                   class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
                 >
-                  <img src="./assets/img/bg-espaco.jpg" alt="" />
+                  <img src="{{image}}" alt="" />
                   <div
                     class="absolute bottom-0 w-full p-6 pt-10 text-white md:p-8 slide-content bg-gradient-to-t from-black"
                   >
                     <h2 class="text-2xl font-semibold">
-                      Lorem ipsum
+                      {{name}}
                     </h2>
                     <p class="max-w-2xl mt-2 ellipsis">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut distinctio harum praesentium aliquam blanditiis earum esse assumenda architecto in rem!
+                      {{description}}
                     </p>
                     <span class="flex items-center mt-5 space-x-3">
                       <span class="transition border-b border-transparent hover:border-b hover:border-white">Saiba mais</span>
@@ -289,7 +289,7 @@ script: ./assets/js/home.min.js
                   </div>
                 </div>
               </a>
-              }
+              {{/each}}
           </div>
         </div>
         
