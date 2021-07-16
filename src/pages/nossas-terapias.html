@@ -43,10 +43,10 @@ script: ./assets/js/all.min.js
           <div class="flex p-2 lg:w-1/2">
             <img src="{{image}}" alt="" class="flex object-cover rounded-xl" />
           </div>
-          <div class="self-center p-2 lg:w-1/2 oddeven-text">
+          <div class="self-center p-2 lg:w-1/2 oddeven-text relative overflow-hidden">
             <h2 class="mb-2 text-2xl font-bold text-rose-gold-900">{{name}}</h2>
             <p>{{description}}</p>
-            <label for="{{drop}}">DROP</label>
+            <label for="{{drop}}" class="bg-gradient-to-t from-rose-gold-100 hover:to-rose-gold-100 p-3 cursor-pointer">DROP</label>
           </div>
         </div>
       </div>

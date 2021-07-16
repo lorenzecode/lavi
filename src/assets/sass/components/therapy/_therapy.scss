@@ -6,11 +6,19 @@
         
         &:checked ~ .oddeven-text {
             transition: max-height 1s;  
-            max-height: 900px;
+            max-height: 1000px;
         }
+    }
+    label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 }
 .oddeven-text {
+    padding-bottom: 48px;
     transition: max-height 1s;
     max-height: 290px;
 
