@@ -203,11 +203,14 @@ body {
   opacity: 1; }
 
 .oddeven-child img {
-  max-height: 275px; }
+  max-height: 326px; }
 
 .oddeven-child input:checked ~ .oddeven-text {
-  transition: max-height 1s;
+  transition: all 1s;
   max-height: 1000px; }
+  .oddeven-child input:checked ~ .oddeven-text .label-icon {
+    transition: all 1s;
+    @apply transform -rotate-90; }
 
 .oddeven-child label {
   position: absolute;
@@ -217,13 +220,17 @@ body {
   text-align: center; }
 
 .oddeven-text {
-  padding-bottom: 48px;
+  padding: 36px 40px;
+  padding-bottom: 72px;
   transition: max-height 1s;
-  max-height: 290px; }
+  max-height: 342px; }
 
 @media (min-width: 1024px) {
   .oddeven:nth-child(even) .oddeven-child {
     flex-direction: row-reverse; } }
+
+.label-icon {
+  transition: all 1s; }
 
 .text-fluid-2xl {
   font-size: clamp(2rem, calc(60 / 1536 * 100vw), 3.75rem); }

@@ -11,7 +11,7 @@ script: ./assets/js/all.min.js
       <h2
         class="max-w-3xl m-auto text-2xl font-black  sm:text-3xl md:text-4xl lg:text-5xl text-rose-gold-500"
       >
-        Nossas terapias
+        Nossas Terapias
       </h2>
       <p class="max-w-3xl m-auto mt-8">
         Terapias Complementares são técnicas reconhecidas pela Organização
@@ -36,17 +36,47 @@ script: ./assets/js/all.min.js
         id="{{id}}"
         class="p-2 mx-2 mt-6 overflow-hidden shadow-md  md:w-1/2 lg:w-full rounded-xl bg-rose-gold-100 oddeven"
       >
-      
         <div class="flex flex-col lg:flex-row oddeven-child">
-          <input type="checkbox" id="{{drop}}">
-          
+          <input type="checkbox" id="{{drop}}" class="hidden" />
+
           <div class="flex p-2 lg:w-1/2">
             <img src="{{image}}" alt="" class="flex object-cover rounded-xl" />
           </div>
-          <div class="self-center p-2 lg:w-1/2 oddeven-text relative overflow-hidden">
+          <div
+            class="relative self-center p-2 overflow-hidden  lg:w-1/2 oddeven-text"
+          >
             <h2 class="mb-2 text-2xl font-bold text-rose-gold-900">{{name}}</h2>
             <p>{{description}}</p>
-            <label for="{{drop}}" class="bg-gradient-to-t from-rose-gold-100 hover:to-rose-gold-100 p-3 cursor-pointer">DROP</label>
+            <label
+              for="{{drop}}"
+              class="flex items-center justify-center p-6 pb-4 font-bold cursor-pointer  bg-gradient-to-t from-rose-gold-100 text-rose-gold-600 via-rose-gold-100 hover:to-rose-gold-100"
+            >
+              <span class="mx-1">Leia mais</span>
+              <span class="mx-1 transform rotate-90 label-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 21 21"
+                  class="w-3 h-3 fill-current text-rose-gold-600"
+                >
+                  <g fill-rule="evenodd">
+                    <g fill-rule="nonzero">
+                      <g>
+                        <g>
+                          <g>
+                            <g>
+                              <path
+                                d="M8.929 1.407L9.969.339c.44-.452 1.153-.452 1.59 0l9.11 9.344c.441.452.441 1.182 0 1.63l-9.11 9.348c-.441.452-1.154.452-1.59 0l-1.04-1.068c-.446-.456-.436-1.202.018-1.649l5.648-5.52H1.125C.502 12.424 0 11.909 0 11.269V9.731c0-.64.502-1.155 1.125-1.155h13.47l-5.648-5.52c-.459-.447-.468-1.193-.018-1.65z"
+                                transform="translate(-842 -5697) translate(-404 5278) translate(571) translate(675 419)"
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </label>
           </div>
         </div>
       </div>

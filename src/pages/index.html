@@ -9,18 +9,18 @@ script: ./assets/js/home.min.js
   <div class="l-embla-viewport">
     <div class="l-embla-wrapper">
       {{#each slideshow}}
-      <a href="{{link}}" title="" class="container l-embla-content grow">
+      <a href="{{link}}" title="" class="container l-embla-content">
         <div
           class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
         >
           <img src="{{image}}" alt="" />
           <div
-            class="absolute bottom-0 w-full p-8 pt-10 text-white slide-content bg-gradient-to-t from-black lg:p-16"
+            class="absolute bottom-0 w-full p-6 pt-10 text-white slide-content bg-gradient-to-t from-black lg:p-16"
           >
-            <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl">
+            <h2 class="text-[1.45rem] font-semibold md:text-3xl lg:text-4xl">
               {{name}}
             </h2>
-            <p class="max-w-2xl lg:mt-2">
+            <p class="max-w-2xl lg:mt-2 ellipsis">
               {{description}}
             </p>
             <span class="flex items-center mt-5 space-x-3">
@@ -101,8 +101,8 @@ script: ./assets/js/home.min.js
       >
         Emocional
       </h3>
-      <p class="p-2 sm:px-8 md:px-16 lg:px-20">
-        Determina a sua reação diante dos seus sentimentos e das situações ao seu redor que podem te afetar
+      <p class="px-4 py-2 sm:px-8 md:px-16 lg:px-20">
+        Determina a sua reação diante dos seus sentimentos e das situações que te afetam
       </p>
     </div>
     <div
@@ -131,8 +131,8 @@ script: ./assets/js/home.min.js
       >
         Mental
       </h3>
-      <p class="p-2 sm:px-8 md:px-16 lg:px-20">
-        Seu corpo responde à forma como você pensa e à tudo que sente
+      <p class="px-4 py-2 sm:px-8 md:px-16 lg:px-20">
+        Clareza para tomada de decisões, diante das circunstâncias tanto positivas quanto negativas
       </p>
     </div>
 
@@ -175,7 +175,7 @@ script: ./assets/js/home.min.js
       >
         Espiritual
       </h3>
-      <p class="p-2 sm:px-8 md:px-16 lg:px-20">
+      <p class="px-4 py-2 sm:px-8 md:px-16 lg:px-20">
         Te conecta com sua essência, com sua alma, com a sua verdade, te traz paz e plenitude
       </p>
     </div>
@@ -197,8 +197,9 @@ script: ./assets/js/home.min.js
       >
         Físico
       </h3>
-      <p class="p-2 sm:px-8 md:px-16 lg:px-20">
-        Clareza para tomada de decisões, diante das circunstâncias tanto positivas quanto negativas
+      <p class="px-4 py-2 sm:px-8 md:px-16 lg:px-20">
+        Seu corpo é influenciado e responde à forma como você pensa e à tudo que sente
+        <!-- Seu corpo responde à forma como você pensa e à tudo que sente -->
       </p>
     </div>
   </div>
@@ -222,9 +223,9 @@ script: ./assets/js/home.min.js
 
 <section class="w-full">
   <div class="grid grid-cols-max-xl-12 auto-rows-auto">
-    <div class="hidden h-16 col-start-1 col-end-2 row-start-1 lg:block lg:h-64 bg-rose-gold-200"></div>
+    <div class="hidden h-16 col-start-1 col-end-2 row-start-1 lg:block lg:h-56 bg-rose-gold-200"></div>
     <div class="col-start-1 col-end-13 row-start-1 lg:col-start-2 lg:col-end-5">
-      <div class="flex items-center h-16 lg:h-48 xl:h-64 bg-rose-gold-200 rounded-r-xl">
+      <div class="flex items-center h-16 lg:h-48 xl:h-56 bg-rose-gold-200 rounded-r-xl">
         <h3
           class="p-4 text-2xl font-bold text-rose-gold-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:pl-0"
         >

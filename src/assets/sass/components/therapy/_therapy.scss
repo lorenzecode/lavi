@@ -1,33 +1,42 @@
 .oddeven-child {
-    img {
-        max-height: 275px;
+  img {
+    max-height: 326px;
+  }
+  input {
+    &:checked ~ .oddeven-text {
+      transition: all 1s;
+      max-height: 1000px;
+
+      .label-icon {
+        transition: all 1s;
+        @apply transform -rotate-90;
+      }
     }
-    input {
-        
-        &:checked ~ .oddeven-text {
-            transition: max-height 1s;  
-            max-height: 1000px;
-        }
-    }
-    label {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
+  }
+  label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 }
 .oddeven-text {
-    padding-bottom: 48px;
-    transition: max-height 1s;
-    max-height: 290px;
+  padding: 36px 40px;
+  padding-bottom: 72px;
+  transition: max-height 1s;
+  max-height: 342px;
 
-    // &:hover {
-    //     max-height: 100%;
-    // }
+  // &:hover {
+  //     max-height: 100%;
+  // }
 }
 @media (min-width: 1024px) {
-    .oddeven:nth-child(even) .oddeven-child {
-        flex-direction: row-reverse;
-    }
+  .oddeven:nth-child(even) .oddeven-child {
+    flex-direction: row-reverse;
+  }
+}
+
+.label-icon {
+  transition: all 1s;
 }

@@ -1,17 +1,9 @@
 [
     {
-        "id": "teste",
-        "drop": "teste-drop",
-        "link": "./nossas-terapias.html#teste",
-        "image": "./assets/img/bg-espaco.jpg",
-        "name": "teste",
-        "description": "A massagem relaxante gera inúmeros benefícios para o organismo como um todo, tanto ao corpo como à mente."
-    },
-    {
         "id": "massagem-relaxante",
         "drop": "massagem-relaxante-drop",
         "link": "./nossas-terapias.html#massagem-relaxante",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/relaxante/lavi_terapias-108.jpg",
         "name": "Massagem Relaxante",
         "description": "A massagem relaxante gera inúmeros benefícios para o organismo como um todo, tanto ao corpo como à mente. Os movimentos firmes e suaves empregados nesta técnica visam ao relaxamento da musculatura, gerando uma sensação de bem-estar e alívio devido ao aumento da serotonina, um neurotransmissor que age no cérebro normalizando o humor, o sono, o ritmo cardíaco, a temperatura corporal e a sensibilidade à dor. A Massagem Relaxante irá contribuir para aliviar a tensão muscular do corpo todo, tranquilizar e como o próprio nome diz, tem como função principal promover o relaxamento do corpo e da mente. Aumenta o bem-estar que acalma o sistema nervoso, contribuindo para o alívio do estresse, ansiedade e insônia."
     },
@@ -19,7 +11,7 @@
         "id": "pedras-quentes",
         "drop": "pedras-quentes-drop",
         "link": "./nossas-terapias.html#pedras-quentes",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/pedras-quentes/lavi_terapias-96.jpg",
         "name": "Pedras Quentes",
         "description": "A Massagem com Pedras Quentes é uma integração entre a massoterapia e a termoterapia (terapia pelo calor), sendo uma terapia milenar, utilizada pelos chineses, monges budistas e indígenas em seus rituais sagrados e de cura. É realizada uma breve massagem em todo o corpo com óleos vegetais e essenciais que contribuem para um bem estar físico e mental e na sequência, é feita também uma suave massagem com as pedras de basalto vulcânico aquecidas, deixando-as na pele durante alguns minutos, em pontos específicos do corpo, chamados de pontos de acupressão. Assim como outras técnicas, as pedras quentes possuem ação energética no estado físico promovendo relaxamento, alívio das dores, desintoxicação e drenagem dos tecidos e no estado mental acalmando a mente e auxiliando na circulação de energia do corpo. Melhora os sintomas de estresse, angústia e depressão. Também ativa o fluxo sanguíneo diminuindo as cólicas menstruais. Esta técnica é perfeita para ser realizada em dias mais frios, pois o calor das pedras quentes permite trazer uma sensação extremamente confortável para todo o corpo."
     },
@@ -27,7 +19,7 @@
         "id": "massagem-terapeutica-localizada",
         "drop": "massagem-terapeutica-localizada-drop",
         "link": "./nossas-terapias.html#massagem-terapeutica-localizada",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/terapeutica/lavi_terapias-63.jpg",
         "name": "Massagem Terapêutica Localizada",
         "description": "Indicada para quem sofre com dores musculares crônicas em um determinado ponto do corpo, normalmente costas, ombros ou lombar, que podem ser decorrentes de má postura, movimentos repetitivos ou algum momento de tensão. A Massagem Terapêutica Localizada é focada em resolver ou amenizar o quadro da dor aliviando as fibras musculares tensionadas, ativando a circulação e devolvendo a mobilidade. Promove relaxamento muscular, melhora da circulação sanguínea e alívio da dor local."
     },
@@ -35,7 +27,7 @@
         "id": "reflexologia-podal",
         "drop": "reflexologia-podal-drop",
         "link": "./nossas-terapias.html#reflexologia-podal",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/reflexologia/lavi_terapias-151.jpg",
         "name": "Reflexologia Podal",
         "description": "Técnica de pressão que atua em pontos reflexos dos pés que correspondem a todas as partes do corpo, acionados para equilibrar a energia do corpo e evitar o surgimento de doenças e problemas de saúde. Ao estimular estes pontos há favorecimento do processo de autocura, uma vez que leva à liberação de toxinas do organismo. Através da Reflexologia Podal é possível reequilibrar as energias que circulam pelo corpo, reduzindo as tensões, melhorando a circulação sanguínea e dissolvendo cristais de cálcio e ácido úrico depositados nas articulações dos pés, e promover relaxamento e bem-estar."
     },
@@ -43,7 +35,7 @@
         "id": "ventosaterapia",
         "drop": "ventosaterapia-drop",
         "link": "./nossas-terapias.html#ventosaterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/ventosa/lavi_terapias-72.jpg",
         "name": "Ventosaterapia",
         "description": "A Ventosaterapia é um método de tratamento minimamente invasivo, desenvolvido a partir de técnicas da Acupuntura, sendo uma técnica muito antiga da medicina tradicional chinesa (MTC), que surgiu há pelo menos 2 mil anos. O procedimento é executado por meio da aplicação de campânulas de vidro ou acrílico (similares a copos) sobre a área a ser tratada, fazendo uma sucção do local. Esta sucção na pele através das ventosas que estimulam a circulação e oxigenação sanguínea, bem como a liberação de toxinas existentes do sangue através de trocas gasosas, que proporcionam maior oxigenação dos tecidos afetados pela dor, resultando na limpeza das toxinas existentes no sangue e nos músculos. Esta técnica favorece a desintoxicação do organismo, nutrição dos músculos, alivia as tensões, as dores musculares e articulares, controla a hipertensão, além de também promover conforto e relaxamento."
     },
@@ -51,7 +43,7 @@
         "id": "auriculoterapia",
         "drop": "auriculoterapia-drop",
         "link": "./nossas-terapias.html#auriculoterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/auriculo/lavi_terapias-90.jpg",
         "name": "Auriculoterapia",
         "description": "A Auriculoterapia ou Acupuntura na Orelha é uma técnica da Medicina Tradicional Chinesa que possibilita o tratamento de patologias com a estimulação de pontos no Pavilhão Auricular. Nesta terapia o corpo humano é representado na orelha, por isso, cada ponto se refere a um órgão, víscera ou parte do corpo específica. A estimulação de pontos nas orelhas com sementes, cristais ou agulhas refletem no local representado sendo possível tratar ou aliviar inúmeros sintomas físicos, mentais e emocionais, como dores por contraturas ou distensões musculares, enxaquecas, problemas urinários e intestinais, digestivos, alérgicos, hormonais e desequilíbrios emocionais como vícios, insônia, ansiedade ou depressão, entre outros."
     },
@@ -59,7 +51,7 @@
         "id": "aromaterapia",
         "drop": "aromaterapia-drop",
         "link": "./nossas-terapias.html#aromaterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/aroma/lavi_terapias-169.jpg",
         "name": "Aromaterapia",
         "description":  "Terapia que atua como uma medicina natural, alternativa, preventiva e também curativa, utilizando Óleos Essenciais extraídos de plantas, flores, folhas, frutos e raízes para equilibrar, harmonizar e promover a saúde do corpo e da mente. Os óleos essenciais possuem substâncias químicas, concentradas e muito complexas, podendo ultrapassar 300 componentes químicos dependendo da sua composição. Quando são inalados ou aplicados na pele, estimulam as células nervosas olfativas. Esse estímulo é capaz de desencadear reações como a ativação do sistema límbico que é responsável por processar as informações vindas dos terminais nervosos conectados ao bulbo olfativo que está diretamente relacionado aos nossos comportamentos sociais e emoções. Através da aromaterapia é possível combater desequilíbrios mentais e emocionais como insônia, estresse, ansiedade, depressão e também desequilíbrios físicos através de suas propriedades bactericidas, antifúngicas e antivirais."
     },
@@ -67,7 +59,7 @@
         "id": "reiki-com-cristais-e-cromoterapia",
         "drop": "reiki-com-cristais-e-cromoterapia-drop",
         "link": "./nossas-terapias.html#reiki-com-cristais-e-cromoterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "image": "./assets/img/reiki/lavi_terapias-157.jpg",
         "name": "Reiki com Cristais e Cromoterapia",
         "description": "Reiki é uma técnica de Canalização da Energia Vital Universal que é recebida e transmitida através da imposição das mãos do Terapeuta. A palavra Reiki vem de Energia Universal (Rei) e Energia Vital (Ki). Sua origem se deu no Japão no início do século XX por Mikao Usui, e desde então é repassada por mestres Reikianos com a finalidade de desfazer bloqueios energéticos, harmonizar o campo vibracional, realinhar os Chakras e regularizar suas funções vitais, podendo ser aplicado em absolutamente tudo, desde objetos, locais à plantas, animais e pessoas. A terapia Reiki atua como um todo, nos níveis físico, emocional, mental e espiritual. Além dos benefícios físicos como relaxamento profundo, aliviando dores, insônia, irritabilidade e mágoas, o Reiki promove a auto cura e equilíbrio do ser, de forma gradual e uniforme. Fortalece a conexão com a essência, despertando a consciência do verdadeiro eu. Isso faz com que o indivíduo consiga eliminar seus conflitos internos e externos e saiba como harmonizar todos eles de maneira saudável. O Reiki não possui contra indicações e pode ser aplicado presencialmente ou à distância. Cromoterapia e Cristais: As ondas emitidas pelas cores na cromoterapia, atuam nas células do corpo melhorando o equilíbrio entre o corpo e a mente, sendo que cada cor apresenta uma função terapêutica diferente. Na Cristaloterapia cada peça de diferente composição ressoa uma energia única que o sintoniza de forma distinta com algumas energias naturais. Após selecionados os cristais são devidamente programados, e podem amplificar e distribuir a energia empregada com as mãos, aperfeiçoando o trabalho. Durante a aplicação cada cristal transmite as vibrações necessárias ao seu corpo, fortalecendo algum setor que esteja necessitado. A aplicação do Reiki em união aos Cristais e a Cromoterapia, contribui para o aperfeiçoamento da terapia básica. Deste modo é possível reajustar os centros energéticos e potencializar os benefícios, alcançando mais equilíbrio físico, mental e energético, assim, o receptor tem uma resposta mais rápida à terapia aplicada."
     }    

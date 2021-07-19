@@ -75,7 +75,7 @@ const optionsSlide = {
   loop: true,
 };
 const emblaSlide = EmblaCarousel(viewPortSlide, optionsSlide);
-const autoplayer = autoplay(emblaSlide, 4000);
+const autoplayer = autoplay(emblaSlide, 8000);
 const dotsArray = generateDotBtns(dots, emblaSlide, autoplayer);
 const setSelectedDotBtn = selectDotBtn(dotsArray, emblaSlide, autoplayer);
 const disablePrevAndNextBtns = disablePrevNextBtns(
@@ -90,5 +90,5 @@ emblaSlide.on('select', disablePrevAndNextBtns);
 emblaSlide.on('init', setSelectedDotBtn);
 emblaSlide.on('init', disablePrevAndNextBtns);
 
-emblaSlide.on("pointerDown", autoplayer.stop);
-emblaSlide.on("init", autoplayer.play);
+emblaSlide.on('pointerDown', autoplayer.stop);
+emblaSlide.on('init', autoplayer.play);

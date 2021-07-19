@@ -1,19 +1,15 @@
 <div id="main-carousel" class="l-embla">
   <div class="l-embla-viewport">
     <div class="l-embla-wrapper">
-      @@for (let i = 0; i < 6; i++) {
+      {{#each espaco}}
       <div class="l-embla-content">
         <div
-          class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
+          class="relative flex justify-center w-full h-full overflow-hidden  rounded-xl"
         >
-          <img
-            src="./assets/img/bg-espaco.jpg"
-            alt=""
-            class="object-cover w-full"
-          />
+          <img src="{{image}}" alt="" class="object-cover w-full" />
         </div>
       </div>
-      }
+      {{/each}}
     </div>
   </div>
 </div>
@@ -21,16 +17,13 @@
 <div id="thumb-carousel" class="l-embla">
   <div class="l-embla-viewport">
     <div class="l-embla-wrapper">
-      @@for (let i = 0; i < 6; i++) {
+      {{#each espaco}}
       <div class="h-20 md:h-24 l-embla-content">
         <button class="w-full h-full overflow-hidden rounded-xl" type="button">
-          <img
-            class="object-cover w-full h-full"
-            src="./assets/img/bg-espaco.jpg"
-          />
+          <img class="object-cover w-full h-full" src="{{thumb}}" />
         </button>
       </div>
-      }
+      {{/each}}
     </div>
   </div>
 </div>
