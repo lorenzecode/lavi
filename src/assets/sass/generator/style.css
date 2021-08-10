@@ -202,6 +202,20 @@ body {
 #thumb-carousel .is-selected img {
   opacity: 1; }
 
+.l-therapy {
+  width: 100%; }
+  .l-therapy .l-embla-viewport {
+    overflow: hidden;
+    width: 100%; }
+  .l-therapy .l-embla-wrapper {
+    margin-left: -16px; }
+  .l-therapy .l-embla-content {
+    flex: 0 0 auto;
+    width: 100%; }
+    .l-therapy .l-embla-content img {
+      width: 100%;
+      object-fit: cover; }
+
 .oddeven-child img {
   max-height: 326px; }
 
@@ -231,6 +245,103 @@ body {
 
 .label-icon {
   transition: all 1s; }
+
+.carousel {
+  width: 100%; }
+
+.embla {
+  position: relative; }
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%; }
+
+.embla__viewport.is-draggable {
+  cursor: move;
+  cursor: grab; }
+
+.embla__viewport.is-dragging {
+  cursor: grabbing; }
+
+.embla__container {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  margin-left: -16px; }
+
+.embla__slide {
+  flex: 0 0 auto;
+  width: 100%;
+  position: relative;
+  padding-left: 16px; }
+
+.embla__button {
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 5rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0; }
+
+.embla__button:not(:disabled) {
+  cursor: pointer;
+  fill: #1bcacd; }
+
+.embla__button:disabled {
+  fill: #e9e9e9; }
+
+.embla__button__svg {
+  width: 3.5rem;
+  height: 3.5rem; }
+
+.embla__button--prev {
+  left: 0.7rem; }
+
+.embla__button--next {
+  right: 0.7rem; }
+
+.embla__dots {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.embla__dot {
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  margin-right: 7.5px;
+  margin-left: 7.5px;
+  display: flex;
+  align-items: center; }
+  .embla__dot:hover:after {
+    background-color: #b76e79; }
+
+.embla__dot:after {
+  @apply transition;
+  background-color: #eddbde;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  content: ''; }
+
+.embla__dot.is-selected:after {
+  background-color: #b76e79;
+  opacity: 1; }
 
 .text-fluid-2xl {
   font-size: clamp(2rem, calc(60 / 1536 * 100vw), 3.75rem); }
