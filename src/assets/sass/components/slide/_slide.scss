@@ -17,16 +17,37 @@
     position: relative;
     overflow: hidden;
 
-    @media (min-width: 640px) {
-      height: clamp(380px, calc(600 / 1536 * 100vw), 60vh);
-    }
-    @media (min-width: 768px) {
-      height: clamp(460px, calc(600 / 1536 * 100vw), 60vh);
-    }
-
     img {
       width: 100%;
       object-fit: cover;
+      object-position: left bottom;
+      min-height: 300px;
+    }
+
+    @media (min-width: 640px) {
+      height: clamp(380px, calc(600 / 1536 * 100vw), 60vh);
+
+      img {
+        min-height: 380px;
+      }
+    }
+    @media (min-width: 768px) {
+      height: clamp(460px, calc(600 / 1536 * 100vw), 60vh);
+
+      img {
+        min-height: 460px;
+      }
+    }
+    @media (min-width: 1177px) {
+      // height: clamp(826px, calc(600 / 1536 * 100vw), 60vh);
+
+      // img {
+      //   min-height: 826px;
+      // }
+      // img {
+      //   object-fit: none;
+      //   object-position: left -250px;
+      // }
     }
   }
 }

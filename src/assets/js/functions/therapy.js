@@ -58,7 +58,7 @@ const setupEmblaCarousel = (emblaNode, options) => {
 };
 
 const options = {
-  loop: false,
+  loop: true,
   align: 'start',
 };
 const emblaNodes = [].slice.call(document.querySelectorAll('.embla'));

@@ -9,11 +9,19 @@ script: ./assets/js/home.min.js
   <div class="l-embla-viewport">
     <div class="l-embla-wrapper">
       {{#each slideshow}}
-      <a href="{{link}}" title="" class="container l-embla-content">
+      <a href="{{link}}" title="{{name}}" class="container l-embla-content">
         <div
           class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
         >
-          <img src="{{image}}" alt="" />
+        
+        <picture class="image main-banner-img is-paddingless">
+          <source media="(max-width: 640px)" srcset="{{imageSM}}" width="" height="">
+           <source media="(max-width: 768px)" srcset="{{imageMD}}" width="" height="">
+          <source media="(max-width: 1176px)" srcset="{{imageLG}}" width="" height="">
+          <img class="l" src="{{image}}" width="" height="" alt="{{name}}">
+      </picture>
+        
+          <!-- <img src="{{image}}" alt="{{name}}" /> -->
           <div
             class="absolute bottom-0 w-full p-6 pt-10 text-white slide-content bg-gradient-to-t from-black lg:p-16"
           >
@@ -252,7 +260,7 @@ script: ./assets/js/home.min.js
                 <div
                   class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
                 >
-                  <img src="{{image}}" alt="" />
+                  <img src="{{image1}}" alt="{{name}}" />
                   <div
                     class="absolute bottom-0 w-full p-6 pt-10 text-white md:p-8 slide-content bg-gradient-to-t from-black"
                   >

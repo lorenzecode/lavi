@@ -2,28 +2,40 @@
     {
         "id": "pedras-quentes",
         "link": "./nossas-terapias.html#pedras-quentes",
-        "image": "./assets/img/bg-espaco.jpg",
+        "imageSM": "./assets/img/slideshow/pedras-quentes-sm.jpg",
+        "imageMD": "./assets/img/slideshow/pedras-quentes-md.jpg",
+        "imageLG": "./assets/img/slideshow/pedras-quentes-lg.jpg",
+        "image": "./assets/img/slideshow/pedras-quentes.jpg",
         "name": "Pedras Quentes",
         "description": "Integração entre a massoterapia e a termoterapia, que promove conforto e sensação de relaxamento profundo para todo o corpo."
     },
     {
         "id": "massagem-relaxante",
         "link": "./nossas-terapias.html#massagem-relaxante",
-        "image": "./assets/img/bg-espaco.jpg",
+        "imageSM": "./assets/img/slideshow/massagem-relaxante-sm.jpg",
+        "imageMD": "./assets/img/slideshow/massagem-relaxante-md.jpg",
+        "imageLG": "./assets/img/slideshow/massagem-relaxante-lg.jpg",
+        "image": "./assets/img/slideshow/massagem-relaxante.jpg",
         "name": "Massagem Relaxante",
         "description": "Alívio de tensões e inúmeros benefícios para o organismo como um todo, trazendo bem estar físico e mental."
     },
     {
         "id": "ventosaterapia",
         "link": "./nossas-terapias.html#ventosaterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "imageSM": "./assets/img/slideshow/ventosaterapia-sm.jpg",
+        "imageMD": "./assets/img/slideshow/ventosaterapia-md.jpg",
+        "imageLG": "./assets/img/slideshow/ventosaterapia-lg.jpg",
+        "image": "./assets/img/slideshow/ventosaterapia.jpg",
         "name": "Ventosaterapia",
         "description": "Desintoxicação do organismo e nutrição dos músculos, resultando na limpeza das toxinas existentes no corpo."
     },
     {
         "id": "aromaterapia",
         "link": "./nossas-terapias.html#aromaterapia",
-        "image": "./assets/img/bg-espaco.jpg",
+        "imageSM": "./assets/img/slideshow/aromaterapia-sm.jpg",
+        "imageMD": "./assets/img/slideshow/aromaterapia-md.jpg",
+        "imageLG": "./assets/img/slideshow/aromaterapia-lg.jpg",
+        "image": "./assets/img/slideshow/aromaterapia.jpg",
         "name": "Aromaterapia",
         "description": "Medicina Natural com Óleos Essenciais 100% puros, que estimulam as células nervosas olfativas para equilibrar a saúde do corpo e da mente."
     }
