@@ -44,10 +44,22 @@
       // img {
       //   min-height: 826px;
       // }
-      // img {
-      //   object-fit: none;
-      //   object-position: left -250px;
-      // }
+      img {
+        object-fit: none;
+        object-position: left -200px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1177px) {
+  .slide-content-end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    p {
+      text-align: end;
     }
   }
 }

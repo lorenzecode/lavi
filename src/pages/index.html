@@ -14,18 +14,17 @@ script: ./assets/js/home.min.js
           class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
         >
         
-        <picture class="image main-banner-img is-paddingless">
+        <picture class="">
           <source media="(max-width: 640px)" srcset="{{imageSM}}" width="" height="">
            <source media="(max-width: 768px)" srcset="{{imageMD}}" width="" height="">
           <source media="(max-width: 1176px)" srcset="{{imageLG}}" width="" height="">
-          <img class="l" src="{{image}}" width="" height="" alt="{{name}}">
+          <img class="" src="{{image}}" width="" height="" alt="{{name}}">
       </picture>
         
-          <!-- <img src="{{image}}" alt="{{name}}" /> -->
           <div
-            class="absolute bottom-0 w-full p-6 pt-10 text-white slide-content bg-gradient-to-t from-black lg:p-16"
+            class="absolute bottom-0 w-full p-6 pt-10 text-white slide-content slide-content-end bg-gradient-to-t from-black lg:p-16"
           >
-            <h2 class="text-[1.45rem] font-semibold md:text-3xl lg:text-4xl">
+            <h2 class="text-[1.44rem] font-semibold md:text-3xl lg:text-4xl">
               {{name}}
             </h2>
             <p class="max-w-2xl lg:mt-2 ellipsis">

@@ -132,6 +132,18 @@ body {
         height: clamp(460px, calc(600 / 1536 * 100vw), 60vh); }
         #l-slide .l-embla-content img {
           min-height: 460px; } }
+    @media (min-width: 1177px) {
+      #l-slide .l-embla-content img {
+        object-fit: none;
+        object-position: left -200px; } }
+
+@media (min-width: 1177px) {
+  .slide-content-end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
+    .slide-content-end p {
+      text-align: end; } }
 
 .equilibrium::before {
   content: '';
@@ -186,6 +198,9 @@ body {
   flex: 0 0 auto;
   width: 100%;
   height: clamp(340px, calc(600 / 1536 * 100vw), 600px); }
+  #main-carousel .l-embla-content:last-child img {
+    border-radius: 12px;
+    object-fit: contain; }
 
 #thumb-carousel .l-embla-wrapper {
   cursor: default;

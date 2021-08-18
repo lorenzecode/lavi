@@ -6,13 +6,28 @@ script: ./assets/js/all.min.js
 ---
 
 <section class="w-full">
-  <div class="flex max-w-screen-xl m-auto">
+  <div class="max-w-screen-xl m-auto md:flex">
     <div class="w-full p-4 md:w-1/3">
-      <img
+      <picture class="">
+        <source
+          media="(max-width: 767px)"
+          srcset="./assets/img/lavi_terapias-49-sm.jpg"
+          width=""
+          height=""
+        />
+        <img
+          class="m-auto rounded-full"
+          src="./assets/img/lavi_terapias-49.jpg"
+          width=""
+          height=""
+          alt=""
+        />
+      </picture>
+      <!-- <img
         src="./assets/img/lavi_terapias-49.jpg"
         alt=""
         class="m-auto rounded-full"
-      />
+      /> -->
     </div>
     <div class="w-full p-4 md:w-2/3">
       <h2
