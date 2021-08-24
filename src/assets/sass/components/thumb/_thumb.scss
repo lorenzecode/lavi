@@ -13,6 +13,13 @@
     width: 100%;
     height: clamp(340px, calc(600 / 1536 * 100vw), 600px);
 
+    @media (min-width: 640px) {
+      height: clamp(420px, calc(600 / 1536 * 100vw), 600px);
+    }
+    @media (min-width: 768px) {
+      height: clamp(480px, calc(600 / 1536 * 100vw), 600px);
+    }
+
     &:last-child {
       img {
         border-radius: 12px;

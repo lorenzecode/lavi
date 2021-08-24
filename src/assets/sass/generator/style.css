@@ -132,10 +132,30 @@ body {
         height: clamp(460px, calc(600 / 1536 * 100vw), 60vh); }
         #l-slide .l-embla-content img {
           min-height: 460px; } }
-    @media (min-width: 1177px) {
+    @media (min-width: 1024px) {
       #l-slide .l-embla-content img {
-        object-fit: none;
-        object-position: left -200px; } }
+        object-fit: none; }
+      #l-slide .l-embla-content:nth-child(1) img {
+        object-position: left -120px; }
+      #l-slide .l-embla-content:nth-child(2) img {
+        object-position: left -80px; }
+      #l-slide .l-embla-content:nth-child(3) img {
+        object-position: left -80px; }
+      #l-slide .l-embla-content:nth-child(4) img {
+        object-position: left -140px; } }
+    @media (min-width: 1177px) {
+      #l-slide .l-embla-content {
+        height: clamp(600px, calc(600 / 1536 * 100vw), 70vh); }
+        #l-slide .l-embla-content img {
+          object-fit: none; }
+        #l-slide .l-embla-content:nth-child(1) img {
+          object-position: left -220px; }
+        #l-slide .l-embla-content:nth-child(2) img {
+          object-position: left -180px; }
+        #l-slide .l-embla-content:nth-child(3) img {
+          object-position: left -180px; }
+        #l-slide .l-embla-content:nth-child(4) img {
+          object-position: left -240px; } }
 
 @media (min-width: 1177px) {
   .slide-content-end {
@@ -165,6 +185,10 @@ body {
 
 #l-services {
   width: 100%; }
+  #l-services .l-embla-btn {
+    width: 30px;
+    height: 30px;
+    padding: 6px; }
   #l-services .l-embla-viewport {
     overflow: hidden;
     width: 100%;
@@ -178,12 +202,28 @@ body {
     max-width: 360px;
     height: clamp(340px, calc(600 / 1536 * 100vw), 480px);
     transition: max-width 0.2s; }
-    @media (min-width: 1024px) {
+    @media (min-width: 640px) {
       #l-services .l-embla-content {
-        max-width: 400px; } }
+        max-width: 420px;
+        height: clamp(420px, calc(600 / 1536 * 100vw), 480px); } }
+    @media (min-width: 768px) {
+      #l-services .l-embla-content {
+        height: clamp(480px, calc(600 / 1536 * 100vw), 480px); } }
     #l-services .l-embla-content img {
       width: 100%;
       object-fit: cover; }
+    #l-services .l-embla-content:nth-child(1) img {
+      object-position: -80px 50%; }
+    #l-services .l-embla-content:nth-child(2) img {
+      object-position: -140px 50%; }
+    #l-services .l-embla-content:nth-child(3) img {
+      object-position: -180px 50%; }
+    #l-services .l-embla-content:nth-child(4) img {
+      object-position: -60px 50%; }
+    #l-services .l-embla-content:nth-child(5) img {
+      object-position: -40px 50%; }
+    #l-services .l-embla-content:nth-child(9) img {
+      object-position: -110px 50%; }
 
 #main-carousel .l-embla-viewport {
   overflow: hidden;
@@ -198,6 +238,12 @@ body {
   flex: 0 0 auto;
   width: 100%;
   height: clamp(340px, calc(600 / 1536 * 100vw), 600px); }
+  @media (min-width: 640px) {
+    #main-carousel .l-embla-content {
+      height: clamp(420px, calc(600 / 1536 * 100vw), 600px); } }
+  @media (min-width: 768px) {
+    #main-carousel .l-embla-content {
+      height: clamp(480px, calc(600 / 1536 * 100vw), 600px); } }
   #main-carousel .l-embla-content:last-child img {
     border-radius: 12px;
     object-fit: contain; }
