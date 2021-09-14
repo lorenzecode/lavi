@@ -14,12 +14,12 @@ script: ./assets/js/home.min.js
           class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
         >
         
-        <picture class="">
-          <source media="(max-width: 640px)" srcset="{{imageSM}}" width="" height="">
-           <source media="(max-width: 768px)" srcset="{{imageMD}}" width="" height="">
-          <source media="(max-width: 1176px)" srcset="{{imageLG}}" width="" height="">
-          <img class="" src="{{image}}" width="" height="" alt="{{name}}">
-      </picture>
+        <picture>
+          <source media="(max-width: 640px)" srcset="{{imageSM}}" width="510" height="340">
+           <source media="(max-width: 768px)" srcset="{{imageMD}}" width="612" height="408">
+          <source media="(max-width: 1176px)" srcset="{{imageLG}}" width="956" height="637">
+          <img src="{{image}}" width="1520" height="1013" alt="{{name}}">
+        </picture>
         
           <div
             class="absolute bottom-0 w-full p-6 pt-10 text-white slide-content slide-content-end bg-gradient-to-t from-black lg:p-16"
@@ -259,7 +259,7 @@ script: ./assets/js/home.min.js
                 <div
                   class="relative flex justify-center w-full h-full overflow-hidden rounded-xl"
                 >
-                  <img src="{{image}}" alt="{{name}}" />
+                  <img src="{{image}}" width="720" height="480" alt="{{name}}" loading="lazy"/>
                   <div
                     class="absolute bottom-0 w-full p-6 pt-10 text-white md:p-8 slide-content bg-gradient-to-t from-black"
                   >

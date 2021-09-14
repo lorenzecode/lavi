@@ -68,37 +68,35 @@ const errorHandler = (r) => {
 // Html
 export const html = () => {
   panini.refresh();
-  return (
-    src(['../src/pages/*.html'])
-      .pipe(plumber(errorHandler))
-      .pipe(
-        panini({
-          root: '../src/pages/',
-          layouts: '../src/pages/layouts/',
-          partials: '../src/pages/partials/',
-          helpers: '../src/pages/helpers/',
-          data: '../src/pages/data/',
+  return src(['../src/pages/*.html'])
+    .pipe(plumber(errorHandler))
+    .pipe(
+      panini({
+        root: '../src/pages/',
+        layouts: '../src/pages/layouts/',
+        partials: '../src/pages/partials/',
+        helpers: '../src/pages/helpers/',
+        data: '../src/pages/data/',
+      })
+    )
+    .pipe(fileInclude({ prefix: '@@' }))
+    .pipe(
+      gulpif(
+        PRODUCTION,
+        urlPrefixer.html({
+          prefix: 'https://laviterapias.com.br/',
         })
       )
-      .pipe(fileInclude({ prefix: '@@' }))
-      // .pipe(
-      //   gulpif(
-      //     PRODUCTION,
-      //     urlPrefixer.html({
-      //       prefix: 'http://localhost:3000/',
-      //     })
-      //   )
-      // )
-      .pipe(gulpif(PRODUCTION, htmlmin({ collapseWhitespace: true })))
-      .pipe(dest('../src'))
-      .pipe(SERVER.stream())
-      .pipe(
-        notify({
-          message: '\n\n✅  ===> HTML — completed!\n',
-          onLast: true,
-        })
-      )
-  );
+    )
+    .pipe(gulpif(PRODUCTION, htmlmin({ collapseWhitespace: true })))
+    .pipe(dest('../src'))
+    .pipe(SERVER.stream())
+    .pipe(
+      notify({
+        message: '\n\n✅  ===> HTML — completed!\n',
+        onLast: true,
+      })
+    );
 };
 
 // Styles
@@ -240,15 +238,17 @@ export const scripts = () => {
 
 // Images
 export const images = () => {
-  return src('../src/assets/img/**/*.{jpg,jpeg,png,svg,gif}')
-    .pipe(imagemin())
-    .pipe(dest('../public/assets/img'))
-    .pipe(
-      notify({
-        message: '\n\n✅  ===> IMAGES — completed!\n',
-        onLast: true,
-      })
-    );
+  return (
+    src('../src/assets/img/**/*.{jpg,jpeg,png,svg,gif}')
+      // .pipe(imagemin())
+      .pipe(dest('../public/assets/img'))
+      .pipe(
+        notify({
+          message: '\n\n✅  ===> IMAGES — completed!\n',
+          onLast: true,
+        })
+      )
+  );
 };
 
 // Copy
