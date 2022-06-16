@@ -1,0 +1,42 @@
+<div id="main-carousel" class="l-embla">
+  <div class="l-embla-viewport">
+    <div class="l-embla-wrapper">
+      {{#each espaco}}
+      <div class="l-embla-content">
+        <div
+          class="relative flex justify-center w-full h-full overflow-hidden  rounded-xl"
+        >
+          <img
+            src="{{image}}"
+            width="1024"
+            height="683"
+            alt="Espaço Laví Terapias"
+            class="object-cover w-full"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div id="thumb-carousel" class="l-embla">
+  <div class="l-embla-viewport">
+    <div class="l-embla-wrapper">
+      {{#each espaco}}
+      <div class="h-20 md:h-24 l-embla-content">
+        <button class="w-full h-full overflow-hidden rounded-xl" type="button">
+          <img
+            class="object-cover w-full h-full"
+            src="{{thumb}}"
+            width="192"
+            height="128"
+            alt="Espaço Laví"
+          />
+        </button>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

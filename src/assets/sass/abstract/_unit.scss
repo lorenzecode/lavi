@@ -1,0 +1,69 @@
+$global-base: 16px !default;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// rem
+@function rem($values, $base: $global-base) {
+  $rem-values: ();
+  $count: length($values);
+
+  @if $base == null {
+    $base: $global-base;
+  }
+
+  @if $count == 1 {
+    @return rem-calc($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, rem-calc(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+// em
+@function em($values, $base: $global-base) {
+  $em-values: ();
+  $count: length($values);
+
+  @if $base == null {
+    $base: $global-base;
+  }
+
+  @if $count == 1 {
+    @return em-calc($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $em-values: append($em-values, em-calc(nth($values, $i), $base));
+  }
+
+  @return $em-values;
+}
+
+// rem calc
+@function rem-calc($value, $base: $global-base) {
+
+  @if (unit($value) != 'rem') {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  @if ($value == 0) { $value: 0; }
+
+  @return $value;
+}
+
+// em calc
+@function em-calc($value, $base: $global-base) {
+
+  @if (unit($value) != 'em') {
+    $value: strip-unit($value) / strip-unit($base) * 1em;
+  }
+
+  @if ($value == 0) { $value: 0; }
+
+  @return $value;
+}

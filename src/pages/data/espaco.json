@@ -1,0 +1,42 @@
+[
+  {
+      "image": "./assets/img/espaco/espaco-1.jpg",
+      "thumb": "./assets/img/espaco/thumb/espaco-1.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-2.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-2.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-3.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-3.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-4.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-4.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-5.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-5.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-6.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-6.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-7.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-7.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-8.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-8.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-9.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-9.jpg"
+  },
+  {
+    "image": "./assets/img/espaco/espaco-10.jpg",
+    "thumb": "./assets/img/espaco/thumb/espaco-10.jpg"
+  }
+]

@@ -1,0 +1,68 @@
+#l-services {
+  width: 100%;
+
+  .l-embla-btn {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+  .l-embla-viewport {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 16px;
+  }
+  .l-embla-wrapper {
+    margin-left: -16px;
+  }
+  .l-embla-content {
+    padding-left: 16px;
+    flex: 0 0 auto;
+    width: 90%;
+    max-width: 360px;
+    height: clamp(340px, calc(600 / 1536 * 100vw), 480px);
+    transition: max-width 0.2s;
+
+    @media (min-width: 640px) {
+      max-width: 420px;
+      height: clamp(420px, calc(600 / 1536 * 100vw), 480px);
+    }
+    @media (min-width: 768px) {
+      height: clamp(480px, calc(600 / 1536 * 100vw), 480px);
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &:nth-child(1) {
+      img {
+        object-position: -80px 50%;
+      }
+    }
+    &:nth-child(2) {
+      img {
+        object-position: -140px 50%;
+      }
+    }
+    &:nth-child(3) {
+      img {
+        object-position: -180px 50%;
+      }
+    }
+    &:nth-child(4) {
+      img {
+        object-position: -60px 50%;
+      }
+    }
+    &:nth-child(5) {
+      img {
+        object-position: -40px 50%;
+      }
+    }
+    &:nth-child(9) {
+      img {
+        object-position: -110px 50%;
+      }
+    }
+  }
+}
